@@ -22,7 +22,8 @@ func main() {
 	if err != nil {
 		fmt.Println("unmarshal error:", err)
 	}
-	fmt.Printf("%+v \n", animals)
+	fmt.Printf("%T\n", animals)
+	fmt.Printf("%+v\n", animals)
         b, merr := json.Marshal(animals)
         if merr != nil {
                 fmt.Println("marshal error:", merr)
