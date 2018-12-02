@@ -18,6 +18,7 @@ type MeasureConfig struct {
 	CPUblue		float64
 	CPUgreen	float64
 	CPUred		float64
+	SYSLOADgreen	float64
 }
 
 type MeasureState struct {
@@ -100,7 +101,7 @@ func getInfo() {
 		MyMeasureState.SYSLOADtrend = true
 	} else {MyMeasureState.SYSLOADtrend = false}
 
-	if MyMeasureState.SYSLOADgrow && MyMeasureState.SYSLOADtrend {
+        if MyMeasureState.SYSLOAD.Load1  >= MyMeasureConfig.SYSLOADgreen {
 		MyMeasureState.SYSLOADalert = true
 	} else {MyMeasureState.SYSLOADalert = false}
 
@@ -115,6 +116,7 @@ func main() {
 	MyMeasureConfig.CPUblue		= 5.0/100.0 
 	MyMeasureConfig.CPUgreen	= 50.0/100.0 
 	MyMeasureConfig.CPUred		= 80.0/100.0 
+	MyMeasureConfig.SYSLOADgreen	= 80.0/100.0 
 
 	MyMeasureState.CPUcount , _ 	= cpu.Counts(true)
 	MyMeasureState.CPUcountf 	= float64(MyMeasureState.CPUcount)
