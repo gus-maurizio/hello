@@ -42,7 +42,8 @@ func main() {
                 fmt.Printf("%v\n",m)
                 })
 
-	qi.Init(10,[2]int{3,4})
+	//qi.Init(10,[2]int{3,4})
+	qi.Init(10,0)
         qi.Do( func(m interface{}) { fmt.Printf("%2d, ",m) })
 
 	fmt.Printf("\n") 
@@ -52,5 +53,11 @@ func main() {
         	qi.Do( func(m interface{}) { fmt.Printf("%2d, ",m) })
 		fmt.Printf("\n") 
 	}
+
+        fmt.Printf("-- DoFor ->")
+        qi.DoFor( 0, 4, func(m interface{}) {
+                fmt.Printf(" %v",m)
+                })
+        fmt.Printf(" \n")
 
 }
