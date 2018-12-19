@@ -49,7 +49,7 @@ func main() {
 	fmt.Printf("\n") 
 	for i := 0; i < 25; i++ {
 		old := qi.PushPop(10+i)
-		fmt.Printf("iter %3d old: %v --> ",i,old) 
+		fmt.Printf("iter %3d old: %3v --> ",i,old) 
         	qi.Do( func(m interface{}) { fmt.Printf("%2d, ",m) })
 		fmt.Printf("\n") 
 	}
