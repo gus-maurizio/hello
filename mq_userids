@@ -1,0 +1,6 @@
+(mq:9.1.1.0)root@ibmqm1:/# id app
+uid=1001(app) gid=1002(app) groups=1002(app),1001(mqclient)
+(mq:9.1.1.0)root@ibmqm1:/# id admin
+uid=1000(admin) gid=1000(admin) groups=1000(admin),999(mqm)
+(mq:9.1.1.0)root@ibmqm1:/# 
+
